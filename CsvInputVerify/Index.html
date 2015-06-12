@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CSV驗證</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+	<!-- bootstrap-table -->
+    <link href="bootstrap/css/bootstrap-table.css" rel="stylesheet">
+
+	<style type="text/css">
+	.col-center{
+		text-align:center;
+	}
+	.fullheigh{
+		height:100%;
+	}
+	.eightywidth{
+		width:80%;
+	}
+	body,html{
+		height:100%;
+	}
+	#b64data{
+		width:100%;
+	}
+	tbody{
+		overflow-y: scroll;
+	}
+	table{
+		height:100%; 
+	}
+	#excel_table{
+		height:80%; 
+	}
+	</style>
+  </head>
+  <body>
+	
+	<div class="container-fluid fullheigh">
+		
+		<div class="row fullheigh">
+			<div class="col-md-12 col-center fullheigh">
+				<textarea id="b64data" name="excel_data">... or paste a base64-encoding here</textarea>
+				<div id="excel_table"></div>
+			</div>
+		</div>
+    </div>
+	
+	
+    <!-- jQuery 2.1.3 -->
+    <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- bootstrap-table -->
+	<script src="bootstrap/js/bootstrap-table.js"></script>
+	<!-- 頁面 JS -->
+	<script type="text/javascript">
+	$(function() {
+        $('textarea[name=excel_data]').keyup(function() {
+            var data = $(this).val();
+            var rows = data.split("\n");
+			var tableString = '<table id=\"table\" data-show-columns=\"true\" data-click-to-select=\"true\" data-search=\"true\" data-show-toggle=\"true\" data-height=\"800\"';
+			tableString = tableString + 'data-query-params=\"queryParams\"';
+			tableString = tableString + 'data-pagination=\"true\"';
+			tableString = tableString + '>';
+			
+            var table = $(tableString);    
+			var thead = $('<thead \"/>');
+			var tr = $('<tr \"/>');
+			var RowsCount=0;
+			//組合thead
+            for(var y in rows) {
+				var cellCounts=0;
+				if(RowsCount==0){
+					var cells = rows[y].split("\t");
+					
+					tr.append('<th data-field=\"state\" data-checkbox=\"true\"> </th>');
+					for(var x in cells) {
+						tr.append('<th data-field=\"'+cellCounts+'\">'+cellCounts+'</th>');
+						cellCounts++;
+					}
+					thead.append(tr);
+				}
+                RowsCount++;
+            }
+			table.append(thead);
+			//組合json array
+			var Data = [];
+			for(var y in rows) {
+				var DataSet = [];
+				var cells = rows[y].split("\t");
+				var cellCounts=0;
+				for(var x in cells) {
+					DataSet[cellCounts] = cells[x];
+					cellCounts++;
+				}
+				Data.push(DataSet);
+            }
+			console.log(Data);
+            $('#excel_table').html(table);
+			$('#table').bootstrapTable({
+				data: Data
+			});
+			
+        });
+    });
+	</script>
+  </body>
+</html>

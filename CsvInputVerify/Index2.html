@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>負載表輸入驗證</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+	<!-- bootstrap-table -->
+    <link href="bootstrap/css/bootstrap-table.css" rel="stylesheet">
+	<!-- bootstrap-table editable-->
+    <link href="bootstrap/css/bootstrap-table-editable.css" rel="stylesheet">	
+	<style type="text/css">
+	.col-center{
+		text-align:center;
+	}
+	.fullheigh{
+		height:100%;
+	}
+	.eightywidth{
+		width:80%;
+	}
+	.eightyheigh{
+		height:80%;
+	}
+	body,html,.tab-content{
+		height:100%;
+	}
+	#b64data{
+		width:100%;
+	}
+	*{
+		 font-family: "malgun gothic", simhei;
+	}
+	</style>
+  </head>
+  <body>
+	
+	<div class="container-fluid fullheigh">
+		
+		<ul class="nav nav-tabs" id="TabNav">
+			<li role="presentation" class="active"><a data-toggle="tab" href="#sectionA">Input</a></li>
+			<li role="presentation"><a data-toggle="tab" href="#sectionB">Edit</a></li>
+			<li role="presentation"><a data-toggle="tab" href="#sectionC">Output</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="sectionA" class="tab-pane fade in active fullheigh">
+				<textarea id="b64data" name="excel_data" class="eightyheigh col-center"> paste here ...</textarea>
+			</div>
+			<div id="sectionB" class="tab-pane fade eightyheigh">
+				<div id="Tag_table" >
+					<table id="TagTable"
+                        data-toggle="table"
+						data-show-header="false">
+                        <thead>
+                        <tr>
+                            <th data-field="id00"></th>
+							<th data-field="id01"></th>
+							<th data-field="id02"></th>
+							<th data-field="id03"></th>
+							<th data-field="id04"></th>
+							<th data-field="id05"></th>
+							<th data-field="id06"></th>
+							<th data-field="id07"></th>
+							<th data-field="id08"></th>
+							<th data-field="id09"></th>
+							<th data-field="id10"></th>
+							<th data-field="id11"></th>
+							<th data-field="id12"></th>
+							<th data-field="id13"></th>
+							<th data-field="id14"></th>
+							<th data-field="id15"></th>
+							<th data-field="id16"></th>
+							<th data-field="id17"></th>
+							<th data-field="id18"></th>
+							<th data-field="id19"></th>
+							<th data-field="id20"></th>
+							<th data-field="id21"></th>
+							<th data-field="id22"></th>
+							<th data-field="id23"></th>
+							<th data-field="id24"></th>
+							<th data-field="id25"></th>
+							<th data-field="id26"></th>
+							<th data-field="id27"></th>
+                        </tr>
+						
+                        </thead>
+						<tbody>
+							<tr id="tr-id-1" class="tr-class-1">
+								<td id="td-id-1" class="td-class-1">樓層Floor</td>
+								<td >房間編號Zone number</td>
+								<td >房間名稱Zone name</td>
+								<td >室內設計條件(夏天)為空調空間再填寫</td>
+								<td ></td>
+								<td ></td>
+								<td >面積</td>
+								<td >高度</td>
+								<td >體積</td>
+								<td >Cleanliness Class</td>
+								<td >Cooling Loading</td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td ></td>
+								<td >SYSTEM(設備名稱)</td>
+								<td ></td>
+							</tr>
+							<tr id="tr-id-2" class="tr-class-2">
+								<td id="td-id-2" class="td-class-2">0</td>
+								<td ></td>
+								<td ></td>
+								<td >Temperature</td>
+								<td ></td>
+								<td >Humidity</td>
+								<td >A</td>
+								<td >H</td>
+								<td >V</td>
+								<td ></td>
+								<td >人員負載</td>
+								<td >11</td>
+								<td >設備負載</td>
+								<td ></td>
+								<td ></td>
+								<td >Process Cooling Load</td>
+								<td ></td>
+								<td >照明負荷</td>
+								<td ></td>
+								<td ></td>
+								<td >Infiltration(Overpressure)</td>
+								<td >General Exhaust</td>
+								<td >Toxic Exhaust</td>
+								<td >Makeup Air</td>
+								<td >Recirculation air flow rate</td>
+								<td >Supply Air</td>
+								<td >SA FROM(供風設備名稱)</td>
+								<td >OA FROM(外氣設備名稱)</td>
+							</tr>
+							<tr id="tr-id-3" class="tr-class-3">
+								<td id="td-id-3" class="td-class-3"></td>
+								<td ></td>
+								<td ></td>
+								<td >℃</td>
+								<td >oF</td>
+								<td >%</td>
+								<td >(m2)</td>
+								<td >(m)</td>
+								<td >(m3)</td>
+								<td ></td>
+								<td >Number</td>
+								<td >#/1000ft2 or #/100m2</td>
+								<td >(熱負載)W/m2</td>
+								<td >(電力負載)W/m2</td>
+								<td >(建議)W/m2</td>
+								<td >W/m2</td>
+								<td >kW</td>
+								<td >lux</td>
+								<td >kW</td>
+								<td >建議值 LPD,W.ft2</td>
+								<td >ACH</td>
+								<td >CMH</td>
+								<td >CMH</td>
+								<td >CMH</td>
+								<td >CMH</td>
+								<td >CMH</td>
+								<td ></td>
+								<td ></td>
+							</tr>
+							<tr id="tr-id-4" class="tr-class-4">
+								<td id="td-id-4" class="td-class-4">0</td>
+								<td >1</td>
+								<td >2</td>
+								<td >3</td>
+								<td >4</td>
+								<td >5</td>
+								<td >6</td>
+								<td >7</td>
+								<td >8</td>
+								<td >9</td>
+								<td >10</td>
+								<td >11</td>
+								<td >12</td>
+								<td >13</td>
+								<td >14</td>
+								<td >15</td>
+								<td >16</td>
+								<td >17</td>
+								<td >18</td>
+								<td >19</td>
+								<td >20</td>
+								<td >21</td>
+								<td >22</td>
+								<td >23</td>
+								<td >24</td>
+								<td >25</td>
+								<td >26</td>
+								<td >27</td>
+							</tr>
+						</tbody>
+                    </table>
+				</div>
+				<div id="excel_table" class="eightyheigh"></div>
+			</div>
+			<div id="sectionC" class="tab-pane fade fullheigh">
+				<div id="OutPut_table" class="eightyheigh">
+					<div id="OutPut_BootstrapTable_toolbar" class="btn-group"/>
+						<button type="button" class="btn btn-default" id="OutPut_BootstrapTable_Save"><i class="glyphicon glyphicon-check"></i></button>
+					</div>
+					<table id="OutPut_BootstrapTable"
+						data-show-header="false"
+						data-toolbar="#OutPut_BootstrapTable_toolbar"
+						data-search="true">
+                        <thead>
+                        <tr>
+                            <th data-field="id00">00</th>
+							<th data-field="id01">01</th>
+							<th data-field="id02">02</th>
+							<th data-field="id03">03</th>
+							<th data-field="id04">04</th>
+							<th data-field="id05">05</th>
+							<th data-field="id06">06</th>
+							<th data-field="id07">07</th>
+							<th data-field="id08">08</th>
+							<th data-field="id09">09</th>
+							<th data-field="id10">10</th>
+							<th data-field="id11">11</th>
+							<th data-field="id12">12</th>
+							<th data-field="id13">13</th>
+							<th data-field="id14">14</th>
+							<th data-field="id15">15</th>
+							<th data-field="id16">16</th>
+							<th data-field="id17">17</th>
+							<th data-field="id18">18</th>
+							<th data-field="id19">19</th>
+							<th data-field="id20">20</th>
+							<th data-field="id21">21</th>
+							<th data-field="id22">22</th>
+							<th data-field="id23">23</th>
+							<th data-field="id24">24</th>
+							<th data-field="id25">25</th>
+							<th data-field="id26">26</th>
+							<th data-field="id27">27</th>
+                        </tr>
+                        </thead>
+                    </table>
+				</div>
+			</div>
+		</div>
+    </div>
+	<div class="modal fade" id="SaveDialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">專案儲存</h4>
+				</div>
+				<div class="modal-body">
+					<p>還在想怎樣寫~~</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+    <!-- jQuery 2.1.3 -->
+    <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- bootstrap-table -->
+	<script src="bootstrap/js/bootstrap-table.js"></script>
+	<!-- bootstrap-table editable-->
+	<script src="bootstrap/js/bootstrap-table-editable.js"></script>
+	<!-- bootstrap-table editable-->
+	<script src="bootstrap/js/bootstrap-extensions-table-editable.js"></script>
+	<!-- bootstrap-table editable-->
+	<script src="bootstrap/js/bootstrap3-table-editable.js"></script>
+	<!-- 頁面 JS -->
+	<script type="text/javascript">
+	$(function() {
+		//設定負載表的表頭
+		function LoadingTableHeaderArraySet(){
+			var LoadingTableHeaderForReturn = [];
+			var LoadingTableHeaderSet= [];
+			LoadingTableHeaderSet["id00"]="樓層Floor";
+			LoadingTableHeaderSet["id01"]="房間編號Zone number";
+			LoadingTableHeaderSet["id02"]="房間名稱Zone name";
+			LoadingTableHeaderSet["id03"]="室內設計條件(夏天)為空調空間再填寫";
+			LoadingTableHeaderSet["id04"]="";
+			LoadingTableHeaderSet["id05"]="";
+			LoadingTableHeaderSet["id06"]="面積";
+			LoadingTableHeaderSet["id07"]="高度";
+			LoadingTableHeaderSet["id08"]="體積";
+			LoadingTableHeaderSet["id09"]="Cleanliness Class";
+			LoadingTableHeaderSet["id10"]="Cooling Loading";
+			LoadingTableHeaderSet["id11"]="";
+			LoadingTableHeaderSet["id12"]="";
+			LoadingTableHeaderSet["id13"]="";
+			LoadingTableHeaderSet["id14"]="";
+			LoadingTableHeaderSet["id15"]="";
+			LoadingTableHeaderSet["id16"]="";
+			LoadingTableHeaderSet["id17"]="";
+			LoadingTableHeaderSet["id18"]="";
+			LoadingTableHeaderSet["id19"]="";
+			LoadingTableHeaderSet["id20"]="";
+			LoadingTableHeaderSet["id21"]="";
+			LoadingTableHeaderSet["id22"]="";
+			LoadingTableHeaderSet["id23"]="";
+			LoadingTableHeaderSet["id24"]="";
+			LoadingTableHeaderSet["id25"]="";
+			LoadingTableHeaderSet["id26"]="SYSTEM(設備名稱)";
+			LoadingTableHeaderSet["id27"]="";
+			
+			LoadingTableHeaderForReturn.push(LoadingTableHeaderSet);
+			LoadingTableHeaderSet= [];
+			LoadingTableHeaderSet["id00"]="";
+			LoadingTableHeaderSet["id01"]="";
+			LoadingTableHeaderSet["id02"]="";
+			LoadingTableHeaderSet["id03"]="Temperature";
+			LoadingTableHeaderSet["id04"]="";
+			LoadingTableHeaderSet["id05"]="Humidity";
+			LoadingTableHeaderSet["id06"]="A";
+			LoadingTableHeaderSet["id07"]="H";
+			LoadingTableHeaderSet["id08"]="V";
+			LoadingTableHeaderSet["id09"]="";
+			LoadingTableHeaderSet["id10"]="人員負載";
+			LoadingTableHeaderSet["id11"]="11";
+			LoadingTableHeaderSet["id12"]="設備負載";
+			LoadingTableHeaderSet["id13"]="";
+			LoadingTableHeaderSet["id14"]="";
+			LoadingTableHeaderSet["id15"]="Process Cooling Load";
+			LoadingTableHeaderSet["id16"]="";
+			LoadingTableHeaderSet["id17"]="照明負荷";
+			LoadingTableHeaderSet["id18"]="";
+			LoadingTableHeaderSet["id19"]="";
+			LoadingTableHeaderSet["id20"]="Infiltration(Overpressure)";
+			LoadingTableHeaderSet["id21"]="General Exhaust";
+			LoadingTableHeaderSet["id22"]="Toxic Exhaust";
+			LoadingTableHeaderSet["id23"]="Makeup Air";
+			LoadingTableHeaderSet["id24"]="Recirculation air flow rate";
+			LoadingTableHeaderSet["id25"]="Supply Air";
+			LoadingTableHeaderSet["id26"]="SA FROM(供風設備名稱)";
+			LoadingTableHeaderSet["id27"]="OA FROM(外氣設備名稱)";
+			
+			LoadingTableHeaderForReturn.push(LoadingTableHeaderSet);
+			LoadingTableHeaderSet= [];
+			LoadingTableHeaderSet["id00"]="";
+			LoadingTableHeaderSet["id01"]="";
+			LoadingTableHeaderSet["id02"]="";
+			LoadingTableHeaderSet["id03"]="℃";
+			LoadingTableHeaderSet["id04"]="oF";
+			LoadingTableHeaderSet["id05"]="%";
+			LoadingTableHeaderSet["id06"]="(m2)";
+			LoadingTableHeaderSet["id07"]="(m)";
+			LoadingTableHeaderSet["id08"]="(m3)";
+			LoadingTableHeaderSet["id09"]="";
+			LoadingTableHeaderSet["id10"]="Number";
+			LoadingTableHeaderSet["id11"]="#/1000ft2 or #/100m2";
+			LoadingTableHeaderSet["id12"]="(熱負載)W/m2";
+			LoadingTableHeaderSet["id13"]="(電力負載)W/m2";
+			LoadingTableHeaderSet["id14"]="(建議)W/m2";
+			LoadingTableHeaderSet["id15"]="W/m2";
+			LoadingTableHeaderSet["id16"]="kW";
+			LoadingTableHeaderSet["id17"]="lux";
+			LoadingTableHeaderSet["id18"]="kW";
+			LoadingTableHeaderSet["id19"]="建議值 LPD,W.ft2";
+			LoadingTableHeaderSet["id20"]="ACH";
+			LoadingTableHeaderSet["id21"]="CMH";
+			LoadingTableHeaderSet["id22"]="CMH";
+			LoadingTableHeaderSet["id23"]="CMH";
+			LoadingTableHeaderSet["id24"]="CMH";
+			LoadingTableHeaderSet["id25"]="CMH";
+			LoadingTableHeaderSet["id26"]="";
+			LoadingTableHeaderSet["id27"]="";
+			
+			LoadingTableHeaderForReturn.push(LoadingTableHeaderSet);
+			return LoadingTableHeaderForReturn;
+			
+		}
+		//表格合併設定與CSS設定
+		function LoadingTableHeaderMerageAndCssSetting(TableName){
+			//表格合併設定
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id00', colspan: 1, rowspan: 3});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id01', colspan: 1, rowspan: 3});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id02', colspan: 1, rowspan: 3});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id03', colspan: 3, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id09', colspan: 1, rowspan: 3});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id10', colspan: 16, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 0, field: 'id26', colspan: 2, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id03', colspan: 2, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id10', colspan: 2, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id12', colspan: 3, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id15', colspan: 2, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id17', colspan: 3, rowspan: 1});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id26', colspan: 1, rowspan: 2});
+			$("#"+TableName).bootstrapTable('mergeCells', {index: 1, field: 'id27', colspan: 1, rowspan: 2});
+			//重新設定表格顏色
+			$( "#"+TableName+" tr" ).slice(1, 4).css( "background-color", "#CCFFFF" );
+			//文字垂直置中
+			$( "#"+TableName+" td" ).css( "text-align", "center" );
+			$( "#"+TableName+" td" ).css( "vertical-align", "middle" );
+		}
+		//初始化設定
+		function init(){
+			//表格合併設定
+			LoadingTableHeaderMerageAndCssSetting("TagTable");
+			//提示顏色
+			$( "#TagTable tr[data-index='3']" ).css( "background-color", "yellow" );
+			//輸入表格事件設定
+			$('textarea[name=excel_data]').keyup(function() {
+				//換頁
+				$("#TabNav li:eq(1) a").tab('show');
+				//將textarea內的文字轉換成表格
+				TextParse2Table($(this).val());
+			});
+			$("#Tag_table").hide();
+			
+			//設定負載表的表頭
+			var LoadingTableHeader = LoadingTableHeaderArraySet();
+			
+			//設定表格
+			$('#OutPut_BootstrapTable').bootstrapTable({
+				data: LoadingTableHeader
+			});
+			//表格合併設定
+			LoadingTableHeaderMerageAndCssSetting("OutPut_BootstrapTable");
+			//專案存檔視窗
+			$('#OutPut_BootstrapTable_Save').click(function() {
+				$("#SaveDialog").modal('show');
+			});
+		}
+		//文字解析
+		function TextParse2Table(data){
+			//客製化按鈕
+			var ToolBoxHtml=$('<div id=\"toolbar\" class=\"btn-group\"/>');
+			ToolBoxHtml.append("<button type=\"button\" class=\"btn btn-default\" id=\"TableTagButton\"><i class=\"glyphicon glyphicon-tag\"></i></button>");			
+			ToolBoxHtml.append("<button type=\"button\" class=\"btn btn-default\" id=\"TableTransferButton\"><i class=\"glyphicon glyphicon-log-out\"></i></button>");	
+			//資料分行切割
+            var rows = data.split("\n");
+			
+			var tableString = '<table id=\"table\"';						//表格設定
+			//tableString = tableString + 'data-show-header=\"false\"';		//關閉欄位名稱
+			tableString = tableString + 'data-show-columns=\"true\"';		//顯示欄位名稱
+			tableString = tableString + 'data-search=\"true\"';				//顯示搜尋欄
+			tableString = tableString + 'data-height=\"800\"';				//設定表格高度
+			tableString = tableString + 'data-query-params=\"queryParams\"';//不太清楚
+			tableString = tableString + 'data-pagination=\"true\"';			//設定分頁
+			tableString = tableString + 'data-toolbar=\"#toolbar\"';		//聯結客製化按鈕
+			tableString = tableString + 'data-page-list=\"[5, 10, 20, 50, 100, 200 , 500 ,1000 ,1500,2000,2500]\"';		//聯結客製化按鈕
+			tableString = tableString + '>';
+            var table = $(tableString);    
+			var thead = $('<thead \"/>');
+			var tr = $('<tr \"/>');
+			//組合thead
+			var cells = rows[0].split("\t");
+			tr.append('<th data-field=\"state\" data-checkbox=\"true\"> </th>');
+			for(var x in cells) tr.append('<th data-field=\"'+x+'\" data-editable=\"true\">'+x+'</th>');
+			thead.append(tr);
+			table.append(thead);
+			//---------------
+			//組合Data array
+			var Data = [];
+			//欄位設定資料格---------------
+			var cells = rows[0].split("\t");
+			var DataSet = [];
+			for(var x in cells) DataSet[x] = "";
+			Data.push(DataSet);
+			//欄位設定資料格---------------
+			for(var y in rows) {
+				var DataSet = [];
+				var cells = rows[y].split("\t");
+				for(var x in cells) DataSet[x] = cells[x];
+				Data.push(DataSet);
+            }
+			//---------------
+			//先清空資料
+            $('#excel_table').html("");
+			//加入客製化按鈕
+            $('#excel_table').append(ToolBoxHtml);
+			//加入表格
+            $('#excel_table').append(table);
+			//設定表格
+			$('#table').bootstrapTable({
+				data: Data
+			});
+			//提示按鈕
+			$('#TableTagButton').click(function() {
+				//$('#modalTagTable').modal('show');
+				if($('#Tag_table').is(':hidden'))$('#Tag_table').show();
+				else $('#Tag_table').hide();
+			});
+			//資料轉換
+			$('#TableTransferButton').click(function() {
+				//alert(JSON.stringify($('#table').bootstrapTable('getData')[0]));
+				TableTransfer2Output($('#table').bootstrapTable('getSelections'),$('#table').bootstrapTable('getData')[0],$('#table').bootstrapTable('getData'));
+			});
+			//重新設定表格顏色
+			$( "#table tr[data-index='0']" ).css( "background-color", "yellow" );
+			//換頁面時，重新設定表格顏色
+			$('#table').on('page-change.bs.table', function (e, size, number) {
+				$( "#table tr[data-index='0']" ).css( "background-color", "yellow" );
+			});
+		}
+		//資料輸出
+		function TableTransfer2Output(TableSelectData,SelectIndex,TableData){
+			//TableSelectData 	表格選取的資料
+			//SelectIndex 		指定的指標
+			//TableData 		表格全部資料
+			//換頁
+			$("#TabNav li:eq(2) a").tab('show');
+			//表頭資料初始化
+			var LoadingTableHeader = LoadingTableHeaderArraySet();
+			//將Edit的資料重新組合近LoadingTableHeader資料內
+			for(var i=0;i<TableSelectData.length;i++){
+				var LoadingTableHeaderSet= [];
+				//依據轉換指標填入數據
+				for(var j=0;j<SelectIndex.length;j++){
+					if(	SelectIndex[j]!=null && SelectIndex[j]!="") 
+					{
+						if(SelectIndex[j]<10) LoadingTableHeaderSet["id0"+SelectIndex[j]]=TableSelectData[i][j];
+						else LoadingTableHeaderSet["id"+SelectIndex[j]]=TableSelectData[i][j];
+					}
+				}
+				//檢查數據，沒有填到的數據補建立
+				for(var j=0;j<28;j++){
+					if(j<10 && LoadingTableHeaderSet["id0"+j]==undefined ) LoadingTableHeaderSet["id0"+j]="";
+					else if( j > 9 && LoadingTableHeaderSet["id"+j]==undefined) LoadingTableHeaderSet["id"+j]="";
+				}
+				LoadingTableHeader.push(LoadingTableHeaderSet);
+			}
+			console.log(LoadingTableHeader);
+			//重新設定表格資料
+			$('#OutPut_BootstrapTable').bootstrapTable('load',{
+				data: LoadingTableHeader}
+			);
+			
+			//重新將表格合併設定
+			LoadingTableHeaderMerageAndCssSetting("OutPut_BootstrapTable");
+			
+		}
+		//初始化設定
+		init();
+	});
+	</script>
+  </body>
+</html>
